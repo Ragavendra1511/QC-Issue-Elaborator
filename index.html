@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QC Issue Elaborator - Dynamic Bookmarklet</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: #333;
+        }
+        
+        .container {
+            background: white;
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 2.5em;
+            font-weight: 300;
+        }
+        
+        .description {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            border-left: 4px solid #007bff;
+        }
+        
+        .bookmarklet-container {
+            text-align: center;
+            margin: 40px 0;
+            padding: 30px;
+            background: linear-gradient(45deg, #2c3e50, #3498db);
+            border-radius: 15px;
+            color: white;
+            position: relative;
+        }
+        
+        .bookmarklet-link {
+            display: inline-block;
+            background: #28a745;
+            color: white !important;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 18px;
+            font-weight: bold;
+            margin: 20px 0;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(40, 167, 69, 0.3);
+            cursor: grab;
+            user-select: none;
+        }
+        
+        .bookmarklet-link:hover {
+            background: #218838;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(40, 167, 69, 0.4);
+            cursor: grab;
+        }
+        
+        .bookmarklet-link:active {
+            cursor: grabbing;
+        }
+        
+        .drag-instruction {
+            background: #fff3cd;
+            color: #856404;
+            padding: 15px;
+            border-radius: 10px;
+            margin: 20px 0;
+            border: 2px dashed #ffc107;
+            text-align: center;
+            font-weight: bold;
+        }
+        
+        .instructions {
+            background: #e3f2fd;
+            padding: 25px;
+            border-radius: 10px;
+            margin: 30px 0;
+            display: block;
+        }
+        
+        .instructions h3 {
+            color: #1976d2;
+            margin-top: 0;
+        }
+        
+        .instructions ol {
+            padding-left: 20px;
+        }
+        
+        .instructions li {
+            margin-bottom: 10px;
+            line-height: 1.6;
+        }
+        
+        .features {
+            display: block;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        
+        .feature {
+            background: #f0f8f0;
+            padding: 20px;
+            border-radius: 10px;
+            border: 1px solid #c3e6c3;
+        }
+        
+        .feature h4 {
+            color: #2d5a2d;
+            margin-top: 0;
+        }
+        
+        .github-info {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 4px solid #6f42c1;
+            margin: 20px 0;
+            display: block;
+        }
+        
+        .github-link {
+            color: #6f42c1;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        
+        .github-link:hover {
+            text-decoration: underline;
+        }
+        
+        .warning {
+            background: #f8d7da;
+            color: #721c24;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid #f5c6cb;
+            margin: 20px 0;
+        }
+        
+        .test-button {
+            background: #17a2b8;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 25px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin: 10px;
+        }
+        
+        .test-button:hover {
+            background: #138496;
+            transform: translateY(-1px);
+        }
+        
+        .update-note {
+            background: #d4edda;
+            color: #155724;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid #c3e6cb;
+            margin: 20px 0;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>QC Issue Elaborator</h1>
+
+        <div class="drag-instruction">
+            👆 Drag the green button below to your bookmarks bar to install the bookmarklet
+        </div>
+
+        <div class="bookmarklet-container">
+            <h2>📌 Drag this to your bookmarks bar:</h2>
+            <a href="javascript:(function(){var script=document.createElement('script');script.src='https://raw.githubusercontent.com/Ragavendra1511/QC-Issue-Elaborator/refs/heads/main/QC-issue-elaborator.js?v='+Date.now();document.head.appendChild(script);})();" class="bookmarklet-link" draggable="true">
+                🚀 QC Issue Elaborator
+            </a>
+        </div>
+        <div class="features">
+            <div class="feature">
+                <h3>✨ Features</h3>
+                <ul>
+                    <li>Standardizes QC issue descriptions</li>
+                    <li>Supports multiple asset types</li>
+                    <li>Customizable templates for different issues</li>
+                    <li>Easy to use with any webpage</li>
+                </ul>
+            </div>
+        <div class="github-info">
+            <h3>📂 GitHub Repository</h3>
+            <p>Source code: <a href="https://github.com/Ragavendra1511/QC-Issue-Elaborator" class="github-link" target="_blank">https://github.com/Ragavendra1511/QC-Issue-Elaborator</a></p>
+            <p>Direct script: <a href="https://raw.githubusercontent.com/Ragavendra1511/QC-Issue-Elaborator/refs/heads/main/QC-issue-elaborator.js" class="github-link" target="_blank">QC-issue-elaborator.js</a></p>
+        </div>
+
+        <div class="instructions">
+            <h3>📋 How to Install & Use</h3>
+            <ol>
+                <li><strong>Show your bookmarks bar:</strong>
+                    <ul>
+                        <li>Chrome: Ctrl+Shift+B (Windows) or Cmd+Shift+B (Mac)</li>
+                        <li>Firefox: Ctrl+Shift+B or right-click toolbar → "Bookmarks Toolbar"</li>
+                        <li>Safari: View menu → "Show Favorites Bar"</li>
+                    </ul>
+                </li>
+                <li><strong>Drag the green button above</strong> to your bookmarks bar</li>
+                <li><strong>Navigate to any webpage</strong> where you want to use the QC tool</li>
+                <li><strong>Click the bookmarklet</strong> in your bookmarks bar to launch the tool</li>
+                <li><strong>Use the tool</strong> to generate standardized QC issue descriptions</li>
+            </ol>
+        </div>
+
+        <div style="text-align: center; margin-top: 30px;">
+            <button class="test-button" onclick="testBookmarklet()">🧪 Test Bookmarklet on This Page</button>
+        </div>
+    </div>
+
+    <script>
+        function testBookmarklet() {
+            // Execute the same code as the bookmarklet
+            var script = document.createElement('script');
+            script.src = 'https://raw.githubusercontent.com/Ragavendra1511/QC-Issue-Elaborator/refs/heads/main/QC-issue-elaborator.js?v=' + Date.now();
+            document.head.appendChild(script);
+        }
+
+        // Add visual feedback for dragging
+        document.querySelector('.bookmarklet-link').addEventListener('dragstart', function(e) {
+            e.target.style.opacity = '0.7';
+            // Create a custom drag image
+            var dragImg = document.createElement('div');
+            dragImg.innerHTML = '🚀 QC Issue Elaborator';
+            dragImg.style.position = 'absolute';
+            dragImg.style.top = '-1000px';
+            dragImg.style.background = '#28a745';
+            dragImg.style.color = 'white';
+            dragImg.style.padding = '10px 20px';
+            dragImg.style.borderRadius = '25px';
+            dragImg.style.fontWeight = 'bold';
+            document.body.appendChild(dragImg);
+            e.dataTransfer.setDragImage(dragImg, 100, 20);
+            
+            setTimeout(() => {
+                document.body.removeChild(dragImg);
+            }, 0);
+        });
+
+        document.querySelector('.bookmarklet-link').addEventListener('dragend', function(e) {
+            e.target.style.opacity = '1';
+        });
+
+        // Prevent the link from being clicked normally
+        document.querySelector('.bookmarklet-link').addEventListener('click', function(e) {
+            e.preventDefault();
+            alert('Please drag this link to your bookmarks bar instead of clicking it!');
+        });
+    </script>
+</body>
+</html>
